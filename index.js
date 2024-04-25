@@ -42,19 +42,28 @@ function getGift() {
     "вкажіть кількість властивостей необхідних Вам для вибору подарунку",
     2
   );
-  const userPowerGift = isErrorNumberInputGift(userInputPowerGift)? 2 : Number(userInputPowerGift);
+  const userPowerGift = isErrorNumberInputGift(userInputPowerGift)
+    ? 2
+    : Number(userInputPowerGift);
 
   let powerGift;
   let meaningsPowerGift;
 
-  let nameGift= (['назва подарунку:']);
-  let propertyNameGift= prompt ('введіть який ви хочете отримати подарунок');
+  let nameGift = ("назва подарунку:");
+  let propertyNameGift = prompt("введіть який ви хочете отримати подарунок");
 
   gift[nameGift] = propertyNameGift;
 
   for (let i = 0; i < userPowerGift; i++) {
-    
-        while (true) {
+    while (true) {
+      propertyNameGift = prompt("введіть який ви хочете отримати подарунок");
+      if (isErrorString(propertyNameGift)) {
+        continue;
+      }
+      break;
+    }
+
+    while (true) {
       powerGift = prompt(["Властивість"]);
       if (isErrorString(powerGift)) {
         continue;
