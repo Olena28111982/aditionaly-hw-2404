@@ -47,9 +47,15 @@ function getGift() {
   let powerGift;
   let meaningsPowerGift;
 
+  let nameGift= (['назва подарунку:']);
+  let propertyNameGift= prompt ('введіть який ви хочете отримати подарунок');
+
+  gift[nameGift] = propertyNameGift;
+
   for (let i = 0; i < userPowerGift; i++) {
+    
         while (true) {
-      powerGift = prompt(["Властивість", назва]);
+      powerGift = prompt(["Властивість"]);
       if (isErrorString(powerGift)) {
         continue;
       }
